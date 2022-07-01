@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,7 @@ SECRET_KEY = 'django-insecure-t0l!x4c-%9kv=w0atz4&0vnv_z-rm3^m@gjbxr2ychr)gi3_my
 DEBUG = True
 
 ALLOWED_HOSTS = []
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
 
     #3rd party app
     'rest_framework',
